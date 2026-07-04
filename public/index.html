@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitch Chat Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+    <div id="header">
+        <input type="text" id="username" placeholder="Pseudo">
+        <input type="color" id="usercolor" value="#9146ff">
+    </div>
+
+    <!-- Nouveau conteneur pour les deux colonnes -->
+    <div id="main-layout">
+        <div id="chat-window">
+            <ul id="messages"></ul>
+            <div id="input-zone">
+                <input id="input" placeholder="Envoyer un message" autocomplete="off">
+            </div>
+        </div>
+        <div id="side-panel">
+            <canvas id="bouncingBalls"></canvas>
+        </div>
+    </div>
+</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

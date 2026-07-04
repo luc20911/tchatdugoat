@@ -1,0 +1,116 @@
+:root {
+    --bg-main: #0e0e10;
+    --bg-chat: #18181b;
+    --border-color: #333;
+    --accent: #9146ff;
+    --text: #efeff1;
+}
+
+/* Reset de base */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: var(--bg-main);
+    font-family: 'Roobert', sans-serif;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+width: 90vw;
+height: 90vh;
+background: var(--bg-chat);
+display: flex;
+flex-direction: column;
+border: 1px solid var(--border-color);
+border-radius: 12px;
+overflow: hidden;
+}
+
+/* Header */
+#header {
+padding: 15px;
+background: #1f1f23;
+border-bottom: 1px solid var(--border-color);
+display: flex;
+gap: 15px;
+}
+
+/* Layout Central (Chat + Side Panel) */
+#main-layout {
+display: flex;
+flex-grow: 1;
+overflow: hidden;
+}
+
+#side-panel {
+flex: 3;
+background: #151517;
+padding: 0; /* On retire le padding pour le canvas */
+position: relative;
+overflow: hidden;
+}
+
+#bouncingBalls {
+width: 100%;
+height: 100%;
+display: block;
+}
+
+#chat-window {
+flex: 1;
+display: flex; /* Active le flexbox */
+flex-direction: column; /* Organise les éléments en colonne */
+overflow: hidden; /* Empêche le débordement global */
+padding: 15px;
+border-right: 1px solid var(--border-color);
+}
+
+#messages {
+list-style: none;
+padding: 0;
+margin: 0;
+flex-grow: 1; /* Prend tout l'espace disponible */
+overflow-y: auto; /* Permet le scroll uniquement sur les messages */
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 10px; /* Petit espacement avant l'input */
+}
+
+li {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* Input Zone */
+#input-zone {
+padding: 10px 0; /* Ajuste le padding selon tes préférences */
+background: var(--bg-chat);
+border-top: 1px solid var(--border-color);
+flex-shrink: 0; /* Empêche l'input de se réduire */
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background: #0e0e10;
+    border: 2px solid var(--border-color);
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+
+input:focus { border-color: var(--accent); }
+
+#username { width: 120px; }
+#usercolor { width: 50px; height: 50px; cursor: pointer; border: none; background: transparent; }
+
+/* Scrollbar */
+#chat-window::-webkit-scrollbar { width: 6px; }
+#chat-window::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
